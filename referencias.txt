@@ -1,0 +1,5 @@
+Servo motor:
+https://blog.fazedores.com/como-usar-servo-motor-com-arduino/
+
+Sensor de nível:
+https://curtocircuito.com.br/blog/Categoria%20Arduino/como-usar-um-sensor-de-nivel-de-agua
