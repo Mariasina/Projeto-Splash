@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alimentação de Splash</title>
+
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.0-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- --------------- -->
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<!-- --------------- -->
+			<a class="navbar-brand" href="index.html">
+				<img src="imagem/aquatech.png" width="200">
+			</a>
+			<!-- --------------- -->
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav">
+					<!-- --------------- -->
+					<li class="nav-item"> 
+						<a class="nav-link" href="alimentacao.html">
+							<b>Horário de alimentação</b>
+						</a>
+					</li>
+					<!-- --------------- -->
+					<li class="nav-item"> 
+						<a class="nav-link" href="">
+							<b>Infomações do aquário</b>
+						</a>
+					</li>
+					<!-- --------------- -->
+				</ul>
+			</div>	
+		</nav>
+		<!-- --------------- -->
+    
+        <section id="formulario">
+            
+            <article class="post">
+                <div class="container-fluid formulario  margin">
+                    <form class="post-content">
+                        <h2>
+                            Cadastre o horário de alimentação de Splash
+                        </h2>
+                        <br>
+                        
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            Primeiro horário de alimentação
+                        </label>
+                        <input type="text" class="form-control" id="feeding_time" placeholder="Primeiro horário">
+                        </div>
+                        <br>
+
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                                Segundo horário de alimentação
+                        </label>
+                        <input type="text" class="form-control" id="feeding_time2" placeholder="Segundo horário">
+                        </div>
+                        <br>
+
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            Terceiro horário de alimentação
+                        </label>
+                        <input type="text" class="form-control" id="feeding_time3" placeholder="Terceiro horário">
+                        </div>
+                        <br>
+                            
+                        <button type="submit" class="btn btn-primary">
+                            Cadastrar
+                        </button>
+                    
+                </form>
+                </div>
+            </article>
+        </section>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+
+    <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmmyjHye0peG81F8QHTzT8o6lu0DHrD_8",
+      authDomain: "projeto-splash.firebaseapp.com",
+      databaseURL: "https://projeto-splash-default-rtdb.firebaseio.com",
+      projectId: "projeto-splash",
+      storageBucket: "projeto-splash.appspot.com",
+      messagingSenderId: "255037989969",
+      appId: "1:255037989969:web:698d382bd5e66994ce4470",
+      measurementId: "G-CKCJYS22ZP"
+    };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var messagesRef = firebase.database()
+            .ref('feeding_times/');
+
+        document.getElementById('contactForm')
+            .addEventListener('submit', submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            // Get values
+            var feeding_time = getInputVal('feeding_time');
+            var feeding_time2 = getInputVal('feeding_time2');
+            var feeding_time3 = getInputVal('feeding_time3');
+
+            saveMessage(feeding_time, feeding_time2, feeding_time3);
+            document.getElementById('contactForm').reset();
+        }
+
+        // Function to get get form values
+        function getInputVal(id) {
+            return document.getElementById(id).value;
+        }
+
+        // Save message to firebase
+        function saveMessage(feeding_time, feeding_time2, feeding_time3) {
+            messagesRef.set({
+                feeding_time: feeding_time,
+                feeding_time2: feeding_time2,
+                feeding_time3: feeding_time3
+            });
+        }
+    </script>
+</body>
+
+</html>

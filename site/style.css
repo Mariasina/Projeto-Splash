@@ -1,0 +1,64 @@
+body {
+	font: 18px Roboto, monospace, sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #8ed6f0;
+}
+
+.navbar {
+	background-color: #0a1c4e;
+}
+
+.quem-somos {
+	background-color: #c7e5f0;
+	color: #0f2c7c;
+}
+
+.margin {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.sensores {
+	background-color: #c7e5f0;
+	color: #0f2c7c;
+}
+
+.alimentacao {
+	background-color: #c7e5f0;
+	color: #0f2c7c;
+}
+
+.rodape {
+	background-color: #0a1c4e;
+	color: #8ed6f0;
+}
+
+.formulario {
+	background-color: #c7e5f0;
+	color: #0f2c7c;
+}
+
+.post {
+	background: #8ed6f0;
+	padding: 130px;
+	background-image: url("imagem/aqua2.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: #c7e5f0;	
+   	border-radius: 5px;
+}
+
+.post-content {
+	margin: 20px;
+	margin-bottom: 15px;
+ }
+
+.btn {
+	background: #ce5915;
+	color: #0a1c4e;
+	font: 17px Roboto, monospace, sans-serif;
+}
+
