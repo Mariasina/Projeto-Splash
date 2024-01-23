@@ -55,18 +55,18 @@ var messagesRef = firebase.database()
     .ref('feeding_times/');
 
 
-    document.getElementById('contactForm')
-        .addEventListener('submit', submitForm);
+    // document.getElementById('contactForm')
+    //     .addEventListener('submit', submitForm);
 
 
 function submitForm(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     // Get values
     var feeding_time = getInputVal('feeding_time');
     var feeding_time2 = getInputVal('feeding_time2');
     var feeding_time3 = getInputVal('feeding_time3');
-    alert(feeding_time);
+    // alert(feeding_time);
 
     saveMessage(feeding_time, feeding_time2, feeding_time3);
     document.getElementById('contactForm').reset();
