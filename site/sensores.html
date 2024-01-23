@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensores do Splash</title>
+
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.5.0-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- --------------- -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- --------------- -->
+        <a class="navbar-brand" href="index.html">
+          <img src="imagem/aquatech.png" width="200">
+        </a>
+        <!-- --------------- -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <!-- --------------- -->
+            <li class="nav-item"> 
+              <a class="nav-link" href="alimentacao.html">
+                <b>Horário de alimentação</b>
+              </a>
+            </li>
+            <!-- --------------- -->
+            <li class="nav-item"> 
+              <a class="nav-link" href="sensores.html">
+                <b>Infomações do aquário</b>
+              </a>
+            </li>
+            <!-- --------------- -->
+          </ul>
+        </div>	
+      </nav>
+		<!-- --------------- -->
+    <section id="quemsomos">
+			<article class="post">
+				<div class="container-fluid quem-somos text-center margin">
+					<h3>Sensores do aquário de Splash</h3>
+          <br>
+
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <img src="imagem/sensorph.jpg" width="320" height="320" class="rounded-circle">
+                  <p>
+                    <ul id="dataList"></ul>
+                  </p>
+                </div>
+
+                <div class="col-lg-6">
+          
+                  <img src="imagem/sensortemp.avif" width="320" height="320" class="rounded-circle">
+                  <p>
+                    <ul id="dataList2"></ul>
+                  </p>
+                  <br>
+                
+                </div>
+
+              </div>
+            </div>
+
+				</div>
+			</article>
+		</section>
+    
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 const firebaseConfig = {
-    apiKey: "",
+    apiKey: "AIzaSyBmmyjHye0peG81F8QHTzT8o6lu0DHrD_8",
     authDomain: "projeto-splash.firebaseapp.com",
     databaseURL: "https://projeto-splash-default-rtdb.firebaseio.com",
     projectId: "projeto-splash",
@@ -13,10 +13,12 @@ const app = firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 const dataList = document.getElementById('dataList');
+const dataList2 = document.getElementById('dataList2');
 
 const phSensorRef = database.ref('/sensors/ph_sensor');
 const tempSensorRef = database.ref('/sensors/temp_sensor');
 dataList.innerHTML = '';
+dataList2.innerHTML = '';
 
 // Evento para escutar alterações nos dados do sensor de PH
 phSensorRef.on('value', function(snapshot) {
@@ -35,5 +37,5 @@ tempSensorRef.on('value', function(snapshot) {
     const data = snapshot.val();
     const listItem = document.createElement('li');
     listItem.textContent = `Sensor de Temperatura: ${data}`;
-    dataList.appendChild(listItem);
+    dataList2.appendChild(listItem);
 });

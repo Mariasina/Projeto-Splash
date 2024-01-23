@@ -42,18 +42,16 @@ body {
 
 .post {
 	background: #8ed6f0;
-	padding: 130px;
+	padding: 132px;
 	background-image: url("imagem/aqua2.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border: #c7e5f0;	
-   	border-radius: 5px;
 }
 
 .post-content {
 	margin: 20px;
-	margin-bottom: 15px;
+	
  }
 
 .btn {
@@ -62,3 +60,6 @@ body {
 	font: 17px Roboto, monospace, sans-serif;
 }
 
+ul {
+	font-size: 16px;
+}
