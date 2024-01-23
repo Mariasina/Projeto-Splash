@@ -17,13 +17,17 @@ const dataList2 = document.getElementById('dataList2');
 
 const phSensorRef = database.ref('/sensors/ph_sensor');
 const tempSensorRef = database.ref('/sensors/temp_sensor');
-dataList.innerHTML = '';
-dataList2.innerHTML = '';
-
+//dataList.innerHTML = '';
+//dataList2.innerHTML = '';
+function clearList(list) {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+}
 // Evento para escutar alterações nos dados do sensor de PH
 phSensorRef.on('value', function(snapshot) {
     // Obter dados do snapshot e adicionar à lista
-    
+    clearList(dataList);
     const data = snapshot.val();
     const listItem = document.createElement('li');
     listItem.textContent = `Sensor de PH: ${data}`;
@@ -34,6 +38,7 @@ phSensorRef.on('value', function(snapshot) {
 // Evento para escutar alterações nos dados do sensor de Temperatura
 tempSensorRef.on('value', function(snapshot) {
     // Obter dados do snapshot e adicionar à lista
+    clearList(dataList2);
     const data = snapshot.val();
     const listItem = document.createElement('li');
     listItem.textContent = `Sensor de Temperatura: ${data}`;
